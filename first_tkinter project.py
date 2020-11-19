@@ -1,11 +1,17 @@
 # First tkinter test project for GUI
 
 from tkinter import *
+import os
+
+'''
+Changing later to connect to db(?)
+change -> tkinter items -> tkinter canvas, frame, flace, mainloop instead
+'''
 
 #Key down function (events)
 def click():
     entered_text=textentry.get() #call get on textbox var before
-
+    output.delete(0.0, END)
 #Main
 window = Tk()
 window.title("Test tkinter project")
@@ -29,6 +35,8 @@ Button(window, text="SUBMIT", width=6, command=click) .grid(row=2,column=0, stic
 
 #Creating a text box
 Label (window, text = "...and its definition is: ", bg="black", fg="white", font="none 12 bold") .grid(row=3, column=0, sticky='EWNS')
+
+my_compdictionary = {} #To add, or fill 
 
 output = Text(window, width=75, height=6, wrap=WORD, background="white")
 output.grid(row=4, column=0, sticky='EWNS')
